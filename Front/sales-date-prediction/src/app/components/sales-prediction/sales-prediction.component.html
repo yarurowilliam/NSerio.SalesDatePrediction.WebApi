@@ -1,0 +1,62 @@
+<div class="sales-prediction-container">
+    <div class="app-header">
+      <h1>Sales Date Prediction App</h1>
+      <div class="logo-serio"></div>
+    </div>
+  
+    <div class="content-area">
+      <div class="section-title">
+        <h2>Customers</h2>
+      </div>
+  
+      <div class="search-container">
+        <input type="text" 
+               placeholder="Customer Name"
+               [(ngModel)]="searchTerm"
+               (keyup)="applyFilter()">
+        <span class="search-icon">⌕</span>
+      </div>
+  
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="sortable">Customer Name ⌃</th>
+              <th>Last Order Date</th>
+              <th>Next Predicted Order</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (prediction of filteredPredictions; track prediction.customerName) {
+              <tr>
+                <td>{{prediction.customerName}}</td>
+                <td>{{prediction.lastOrderDate | date:'M/d/yyyy'}}</td>
+                <td>{{prediction.nextPredictedOrder | date:'M/d/yyyy'}}</td>
+                <td class="actions">
+                    <button class="btn-view" (click)="viewOrders(prediction)">VIEW ORDERS</button>
+                    <button class="btn-new" (click)="newOrder(prediction)">NEW ORDER</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+  
+      <div class="pagination">
+        <div class="page-size">
+          Rows per page: 
+          <select [(ngModel)]="pageSize" (change)="onPageSizeChange()">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+        <div class="page-info">1-10 of 89</div>
+        <div class="page-controls">
+          <button class="page-arrow" [disabled]="currentPage === 1">❮</button>
+          <button class="page-arrow" [disabled]="endIndex >= totalItems">❯</button>
+        </div>
+      </div>
+    </div>
+  </div>

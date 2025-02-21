@@ -1,0 +1,60 @@
+<div class="modal-container">
+    <div class="modal-header">
+      <h2>Customer {{data.customerName}} - Orders</h2>
+    </div>
+  
+    <div class="modal-content">
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Required Date</th>
+            <th>Shipped Date</th>
+            <th>Ship Name</th>
+            <th>Ship Address</th>
+            <th>Ship City</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (order of customerOrders; track order.orderId) {
+            <tr>
+              <td>{{order.orderId}}</td>
+              <td>{{order.requiredDate | date:'MM/dd/yyyy, h:mm a'}}</td>
+              <td>{{order.shippedDate | date:'MM/dd/yyyy, h:mm a'}}</td>
+              <td>{{order.shipName}}</td>
+              <td>{{order.shipAddress}}</td>
+              <td>{{order.shipCity}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+  
+      <div class="pagination">
+        <div class="page-size">
+          Rows per page: 
+          <select [(ngModel)]="pageSize" (change)="updatePagination()">
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="page-info">
+          {{startIndex + 1}}-{{endIndex}} of {{totalItems}}
+        </div>
+        <div class="page-controls">
+          <button 
+            [disabled]="currentPage === 1"
+            (click)="onPageChange(currentPage - 1)">
+            ❮
+          </button>
+          <button 
+            [disabled]="endIndex >= totalItems"
+            (click)="onPageChange(currentPage + 1)">
+            ❯
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal-footer">
+      <button class="close-button" (click)="closeDialog()">CLOSE</button>
+    </div>
+  </div>

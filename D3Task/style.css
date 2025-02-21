@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input {
+    padding: 8px;
+    width: 300px;
+    font-size: 14px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #46b8da;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+    display: none;
+}
+
+.bar-chart {
+    margin-top: 20px;
+}
+
+.bar {
+    fill-opacity: 0.9;
+}
+
+.bar:hover {
+    fill-opacity: 1;
+}
+
+.bar-label {
+    fill: black;
+    font-size: 12px;
+}

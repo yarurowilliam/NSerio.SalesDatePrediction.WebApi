@@ -1,0 +1,95 @@
+.modal-container {
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 800px;
+    max-width: 100%;
+  }
+  
+  .modal-header {
+    background-color: #dc3545;
+    color: white;
+    padding: 15px 20px;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    font-weight: normal;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  td {
+    font-size: 14px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .page-size select {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  
+  .page-controls button {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .page-controls button:disabled {
+    color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .modal-footer {
+    padding: 15px 20px;
+    text-align: right;
+    border-top: 1px solid #ddd;
+  }
+  
+  .close-button {
+    color: #dc3545;
+    border: none;
+    background: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-weight: 500;
+  }
+  
+  .close-button:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+  }

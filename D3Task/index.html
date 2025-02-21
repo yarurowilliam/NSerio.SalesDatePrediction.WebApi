@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3.js Horizontal Bar Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-group">
+            <label for="sourceData">Source Data:</label>
+            <input type="text" id="sourceData" placeholder="Enter numbers separated by commas">
+            <button id="updateData">Update Data</button>
+            <div id="error" class="error">Please enter valid numbers separated by commas</div>
+        </div>
+        <div id="chart" class="bar-chart"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
